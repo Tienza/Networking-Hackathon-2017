@@ -26,7 +26,7 @@
                 <div class="inner">
                     <!-- Header -->
                     <header id="header">
-                        <a href="index.php" class="logo"><strong>NetMonitor</strong> by Graham Burek, and Piradon Liengtiraphan, Peter Sofronas</a>
+                        <a href="index.php" class="logo"><strong>NetMonitor</strong> by Graham Burek, Piradon Liengtiraphan, and Peter Sofronas</a>
                     </header>
                     <!-- Banner -->
                     <section id="banner">
@@ -195,15 +195,15 @@
                         </header>
                         <div class="mini-posts">
                             <article>
-                                <a href="#" class="image"><img src="images/graham.jpg" alt="" /></a>
+                                <a href="https://github.com/GrahamBurek" class="image"><img src="images/graham.jpg" alt="" /></a>
                                 <p>Graham Burek</p>
                             </article>
                             <article>
-                                <a href="#" class="image"><img src="images/tien.jpg" alt="" /></a>
+                                <a href="https://github.com/Tienza" class="image"><img src="images/tien.jpg" alt="" /></a>
                                 <p>Piradon (Tien) Liengtiraphan</p>
                             </article>
                             <article>
-                                <a href="#" class="image"><img src="images/peter.jpg" alt="" /></a>
+                                <a href="https://github.com/sofronaspe" class="image"><img src="images/peter.jpg" alt="" /></a>
                                 <p>Peter Sofronas</p>
                             </article>
                         </div>

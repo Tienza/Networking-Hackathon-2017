@@ -2,9 +2,9 @@
 	$debug = true;
 
 	function show_networks($dbc) {
-		$query = 'SELECT * FROM Network ORDER BY Timestamp DESC LIMIT 50';
+		$query = 'SELECT * FROM Network ORDER BY Timestamp DESC LIMIT 50;';
 
-		$result = mysqli_query($dbc, $query);
+		$results = mysqli_query($dbc, $query);
 
 		# Output SQL errors, if any
 		show_query($query);

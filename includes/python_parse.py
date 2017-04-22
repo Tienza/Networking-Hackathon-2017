@@ -16,10 +16,10 @@ def chunks(array, splitVal):
 
 def main():
     print("Begin Parse...")
-    with open('log.txt', 'r') as file:
+    with open('/var/www/html/includes/log.txt', 'r') as file:
         text = file.read()
         macAddr = re.findall('(\w+:\w+:\w+:\w+:\w+:\w+)',text)
-        with open('log.txt','r') as file2:
+        with open('/var/www/html/includes/log.txt','r') as file2:
             text2 = file2.readlines()       
             text2 = [x.strip() for x in text2]    
             text2 = list(chunks(text2,len(macAddr)))

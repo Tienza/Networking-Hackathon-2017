@@ -45,6 +45,7 @@
                                     <th>Frequency</th>
                                     <th>Quality</th>
                                     <th>Strength</th>
+				    <th>Timestamp</th>
                                 </tr>
                                 <?php
                                 	require('includes/helpers.php');

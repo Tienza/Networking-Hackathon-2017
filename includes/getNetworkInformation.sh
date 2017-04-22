@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-command_result=$(iwlist wlan1 scanning)
+command_result=$(/sbin/iwlist wlan0 scanning)
 
 /var/www/html/includes/getAddress.sh "$command_result"
 /var/www/html/includes/getFrequency.sh "$command_result"

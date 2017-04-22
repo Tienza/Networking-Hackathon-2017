@@ -1,4 +1,5 @@
 import re
+import socket 
 import MySQLdb
 
 debug = False
@@ -34,13 +35,11 @@ def main():
     return text2
 
 networks = main()
-
-print(str(networks))
+hostname = socket.gethostname()
 
 # Use all the SQL you like
 for network in xrange(0, len(networks[0])):
-    print("Inserting...")
-    query = 'INSERT INTO Network(SSID, MacAddr, Frequency, Quality, Strength) VALUES("' + str(networks[4][network]) + '", "' + str(networks[0][network]) + '", "' + str(networks[1][network]) + '", "' + str(networks[2][network]) + '", "' + str(networks[3][network])+ '");'
+    query = 'INSERT INTO Network(SSID, MacAddr, Frequency, Quality, Strength, DeviceName) VALUES("' + str(networks[4][network]) + '", "' + str(networks[0][network]) + '", "' + str(networks[1][network]) + '", "' + str(networks[2][network]) + '", "' + str(networks[3][network])+ '", "' + str(hostname) + '");'
     print(query)
     try:
         cur.execute(query)

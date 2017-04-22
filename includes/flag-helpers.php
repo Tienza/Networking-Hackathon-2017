@@ -1,10 +1,10 @@
 <?php
         require("connect_db.php");
 	$debug = false;
-        show_networks($dbc);
+        show_flag_networks($dbc);
 
-	function show_networks($dbc) {
-		$query = 'SELECT * FROM Network ORDER BY Timestamp DESC LIMIT 50;';
+	function show_flag_networks($dbc) {
+		$query = 'SELECT * FROM Network WHERE SSID NOT IN ("FoxNet","Marist Guest WiFi","Marist Windows WiFi Setup","airfox-event","eduroam") ORDER BY Timestamp DESC;';
 
 		$results = mysqli_query($dbc, $query);
 

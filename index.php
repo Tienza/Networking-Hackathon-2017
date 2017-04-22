@@ -32,56 +32,33 @@
                     <section id="banner">
                         <div class="content">
                             <header>
-                                <h1>Flagged Networks</h1>
+                                <h1>Active Networks</h1>
                                 <p>Monitor Flagged Connections</p>
                             </header>
-                            <p>Networks that are detected that don't fall within the normal naming and security schemes of Marist affiliated networks</p>
+                            <p>Information is pulled from the SQLITE database to be displayed in the table to the side. Networks are updated every 10 seconds</p>
                         </div>
                         <span class="image object">
                             <table>
                                 <tr>
-                                    <th>Company</th>
-                                    <th>Contact</th>
-                                    <th>Country</th>
+                                    <th>SSID</th>
+                                    <th>MacAddr</th>
+                                    <th>Frequency</th>
+                                    <th>Quality</th>
+                                    <th>Strength</th>
                                 </tr>
-                                <tr>
-                                    <td>Alfreds Futterkiste</td>
-                                    <td>Maria Anders</td>
-                                    <td>Germany</td>
-                                </tr>
-                                <tr>
-                                    <td>Centro comercial Moctezuma</td>
-                                    <td>Francisco Chang</td>
-                                    <td>Mexico</td>
-                                </tr>
-                                <tr>
-                                    <td>Ernst Handel</td>
-                                    <td>Roland Mendel</td>
-                                    <td>Austria</td>
-                                </tr>
-                                <tr>
-                                    <td>Island Trading</td>
-                                    <td>Helen Bennett</td>
-                                    <td>UK</td>
-                                </tr>
-                                <tr>
-                                    <td>Laughing Bacchus Winecellars</td>
-                                    <td>Yoshi Tannamuri</td>
-                                    <td>Canada</td>
-                                </tr>
-                                <tr>
-                                    <td>Magazzini Alimentari Riuniti</td>
-                                    <td>Giovanni Rovelli</td>
-                                    <td>Italy</td>
-                                </tr>
+                                <?php
+                                	require('includes/helpers.php');
+            						require('includes/connect_db.php');
+            						show_networks($dbc)
+                                ?>
                             </table>
                         </span>
                     </section>
                     <!-- Section -->
                     <section>
                         <header class="major">
-                            <h2>Active Networks</h2>
-                            <p>Information is pulled from the SQLITE database to be displayed in the table to the side. Networks are updated every 10 seconds</p>
+                            <h2>Flagged Networks</h2>
+                            <p>Networks that are detected that don't fall within the normal naming and security schemes of Marist affiliated networks</p>
                         </header>
                         <div class="features">
                             <article>

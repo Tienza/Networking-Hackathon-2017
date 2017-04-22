@@ -1,5 +1,7 @@
 <?php
-	$debug = true;
+        require("connect_db.php");
+	$debug = false;
+        show_networks($dbc);
 
 	function show_networks($dbc) {
 		$query = 'SELECT * FROM Network ORDER BY Timestamp DESC LIMIT 50;';
@@ -11,6 +13,15 @@
     	check_results($results);
 
     	if ($results && mysqli_num_rows($results) > 0) {
+                echo "<table>";
+                    echo "<tr>";
+                        echo "<th>SSID</th>";
+                        echo "<th>MAC Address</th>";
+                        echo "<th>Frquency</th>";
+                        echo "<th>Quality</th>";
+                        echo "<th>Strength</th>";
+                        echo "<th>Timestamp</th>"; 
+                    echo "</tr>";
     		while ( $row = mysqli_fetch_array($results , MYSQLI_ASSOC )){
 				echo "<tr>";
 					echo "<td>" . $row['SSID'] . "</td>";
@@ -21,6 +32,7 @@
 					echo "<td>" . $row['Timestamp'] . "</td>";
 				echo "</tr>";
 			}
+                echo "</table>";
     	}
 	}
 

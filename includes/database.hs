@@ -17,9 +17,9 @@ main = do
 
 
 stmt :: Query
-stmt = "insert into Networks (SSID, MacAddr, Frequency, Quality, SignalStrength) values (?,?,?,?,?)" 
+stmt = "insert into Networks (SSID, MacAddr, Frequency, Quality, Strength) values (?,?,?,?,?)" 
 
 insertInto :: Query -> Connection -> [String] -> IO ()
 insertInto stmt conn xs = do
-  execute conn stmt [(xs !! 0),(xs !! 1),(xs !! 2),(xs !! 3),(xs !! 4)]
+  execute conn stmt [(xs !! 4),(xs !! 0),(xs !! 1),(xs !! 2),(xs !! 3)]
   close conn

@@ -1,11 +1,10 @@
 <?php
         require("connect_db.php");
 	$debug = false;
-        show_flag_networks($dbc);
+        show_users($dbc);
 
-	function show_flag_networks($dbc) {
-		$query = 'SELECT * FROM Network WHERE SSID NOT IN ("FoxNet","Marist Guest WiFi","Marist Windows WiFi Setup","airfox-event","eduroam") ORDER BY Timestamp DESC LIMIT 50;';
-
+	function show_users($dbc) {
+		$query = 'SELECT * FROM Users WHERE VendorInfo NOT LIKE "%(Unknown)%" ORDER BY Timestamp DESC';
 		$results = mysqli_query($dbc, $query);
 
 		# Output SQL errors, if any
@@ -15,23 +14,17 @@
     	if ($results && mysqli_num_rows($results) > 0) {
                 echo "<table>";
                     echo "<tr>";
-                        echo "<th>SSID</th>";
-                        echo "<th>Device Name</th>";
-			echo "<th>MAC Address</th>";
-                        echo "<th>Frquency</th>";
-                        echo "<th>Quality</th>";
-                        echo "<th>Strength</th>";
-                        echo "<th>Timestamp</th>"; 
+                        echo "<th>Timestamp</th>";
+                        echo "<th>IP Address</th>";
+			echo "<th>Mac Address</th>";
+                        echo "<th>Vendor Info</th>";
                     echo "</tr>";
     		while ( $row = mysqli_fetch_array($results , MYSQLI_ASSOC )){
 				echo "<tr>";
-					echo "<td>" . $row['SSID'] . "</td>";
-					echo "<td>" . $row['DeviceName'] . "</td>";	
-					echo "<td>" . $row['MacAddr'] . "</td>";
-					echo "<td>" . $row['Frequency'] . "</td>";
-					echo "<td>" . $row['Quality'] . "</td>";
-					echo "<td>" . $row['Strength'] . "</td>";
 					echo "<td>" . $row['Timestamp'] . "</td>";
+					echo "<td>" . $row['IPAddr'] . "</td>";	
+					echo "<td>" . $row['MacAddr'] . "</td>";
+					echo "<td>" . $row['VendorInfo'] . "</td>";
 				echo "</tr>";
 			}
                 echo "</table>";

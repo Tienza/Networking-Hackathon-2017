@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE HTML>
 <!--
     Editorial by HTML5 UP
@@ -17,6 +19,44 @@
         <!--[if lte IE 8]>
         <link rel="stylesheet" href="assets/css/ie8.css" />
         <![endif]-->
+        <!-- <?php
+            require('includes/connect_db.php');
+            require('includes/login_tools.php');
+            session_start();
+            
+            if ($_SERVER[ 'REQUEST_METHOD' ] == 'POST') {
+            	global $dbc;
+            	$pid = -1;
+            
+            	$user = strtolower(trim($_POST['name']));
+            	$pass = $_POST['pass'];
+            	# Queries the database for salt unique to users to use in hash function
+            	$query = 'SELECT salt FROM admins WHERE username="' . $user . '"';
+            
+            	$results = mysqli_query($dbc, $query);
+            
+            	$results = mysqli_fetch_array($results);
+            		
+                    if(!empty($results)) {
+                        $options = [
+                            'cost' => 12,
+                            'salt' => $results[0],
+                        ];
+                        
+                        $pass = password_hash($pass, PASSWORD_BCRYPT, $options);
+                        $pid = validate($user, $pass);
+                    }
+                    else
+                        $pid = -1;
+            	if($pid == -1) {
+            		echo '<script>alert("Failed to Login");</script>';
+            	}
+            	else {
+                        	$_SESSION['login_user'] = $user;
+            		load('index.php', $pid);
+                    }
+            }
+            ?> -->
     </head>
     <body>
         <!-- Wrapper -->
@@ -26,14 +66,28 @@
                 <div class="inner">
                     <!-- Header -->
                     <header id="header">
-                        <a href="index.php" class="logo"><strong>Pi-In-The-Skynet</strong> by Graham Burek, Piradon Liengtiraphan, and Peter Sofronas</a>
+                        <a href="index.php" class="logo"><strong>NetMonitor</strong> by Graham Burek, Piradon Liengtiraphan, and Peter Sofronas</a>
                     </header>
                     <!-- Content -->
                     <section>
                         <header class="main">
-                            <h1>Active Users</h1>
+                            <h1>Login</h1>
                         </header>
-                        <span id="table-holder-3"></span>
+                        <div id="foundItemForm" class="row">
+                            <form class="col s12" action="login.php" method="POST">
+                                <div class="row">
+                                    <input required placeholder="Username" name="name" type="text">
+                                    <label for="title">Username</label>
+                                </div>
+                                <div class="row">
+                                    <input required placeholder="Password" name="pass" type="password">
+                                    <label for="first_name">Password</label>
+                                </div>
+                                <div class="row">
+                                    <button type="submit">Log in</button>
+                                </div>
+                            </form>
+                        </div>
                     </section>
                 </div>
             </div>
@@ -47,7 +101,7 @@
                         </header>
                         <ul>
                             <li><a href="index.php">Homepage</a></li>
-                            <li><a href="info.php">Information</a></li>
+                            <li><a href="info.php">Users</a></li>
                         </ul>
                     </nav>
                     <!-- Section -->
@@ -83,20 +137,6 @@
         <script src="assets/js/util.js"></script>
         <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
         <script src="assets/js/main.js"></script>
-        <script>
-            $(document).ready(function() {
-                getUserTable();
-                setInterval(function(){
-                    getUserTable();
-                    console.log("Running AJAX...");
-                },10000);
-            });
-            function getUserTable() {
-                $.get("includes/user-helpers.php", function(data){
-                    $("#table-holder-3").empty();
-                    $("#table-holder-3").append(data);
-                });
-            }
-        </script>
     </body>
 </html>
+

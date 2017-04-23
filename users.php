@@ -6,7 +6,7 @@
     -->
 <html>
     <head>
-        <title>Generic - Editorial by HTML5 UP</title>
+        <title>Pi-In-The-Skynet</title>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
         <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
@@ -31,12 +31,9 @@
                     <!-- Content -->
                     <section>
                         <header class="main">
-                            <h1>Information</h1>
+                            <h1>Active Users</h1>
                         </header>
-                        <span class="image main"><img src="images/pic11.jpg" alt="" /></span>
-                        <p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit.</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>
-                        <p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
+                        <span id="table-holder-3"></span>
                     </section>
                 </div>
             </div>
@@ -75,7 +72,7 @@
                     </section>
                     <!-- Footer -->
                     <footer id="footer">
-                        <p class="copyright">&copy; NetMonitor. All rights reserved.</p>
+                        <p class="copyright">&copy; Pi-In-The-Skynet. All rights reserved.</p>
                     </footer>
                 </div>
             </div>
@@ -86,5 +83,20 @@
         <script src="assets/js/util.js"></script>
         <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
         <script src="assets/js/main.js"></script>
+        <script>
+            $(document).ready(function() {
+                getUserTable();
+                setInterval(function(){
+                    getUserTable();
+                    console.log("Running AJAX...");
+                },10000);
+            });
+            function getUserTable() {
+                $.get("includes/user-helpers.php", function(data){
+                    $("#table-holder-3").empty();
+                    $("#table-holder-3").append(data);
+                });
+            }
+        </script>
     </body>
 </html>

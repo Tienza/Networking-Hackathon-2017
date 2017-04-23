@@ -6,7 +6,7 @@
     -->
 <html>
     <head>
-        <title>Editorial by HTML5 UP</title>
+        <title>Pi-In-The-Skynet</title>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
         <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
@@ -26,7 +26,7 @@
                 <div class="inner">
                     <!-- Header -->
                     <header id="header">
-                        <a href="index.php" class="logo"><strong>NetMonitor</strong> by Graham Burek, Piradon Liengtiraphan, and Peter Sofronas</a>
+                        <a href="index.php" class="logo"><strong>Pi-In-The-Skynet</strong> by Graham Burek, Piradon Liengtiraphan, and Peter Sofronas</a>
                     </header>
                     <!-- Banner -->
                     <section id="banner">
@@ -37,23 +37,11 @@
                             </header>
                             <p>Information is pulled from the SQLITE database to be displayed in the table to the side. Networks are updated every 10 seconds</p>
                         </div>
-                        <span class="image object">
-                            <table>
-                                <tr>
-                                    <th>SSID</th>
-                                    <th>MacAddr</th>
-                                    <th>Frequency</th>
-                                    <th>Quality</th>
-                                    <th>Strength</th>
-				    <th>Timestamp</th>
-                                </tr>
-                                <?php
-                                	require('includes/helpers.php');
-            						require('includes/connect_db.php');
-            						show_networks($dbc)
-                                ?>
-                            </table>
-                        </span>
+                        <div>
+                            <article>
+                                <span id="table-holder"></span>
+                            </article>
+                        </div>
                     </section>
                     <!-- Section -->
                     <section>
@@ -63,43 +51,7 @@
                         </header>
                         <div class="features">
                             <article>
-                                <table>
-                                    <tr>
-                                        <th>Company</th>
-                                        <th>Contact</th>
-                                        <th>Country</th>
-                                    </tr>
-                                    <tr>
-                                        <td>Alfreds Futterkiste</td>
-                                        <td>Maria Anders</td>
-                                        <td>Germany</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Centro comercial Moctezuma</td>
-                                        <td>Francisco Chang</td>
-                                        <td>Mexico</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Ernst Handel</td>
-                                        <td>Roland Mendel</td>
-                                        <td>Austria</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Island Trading</td>
-                                        <td>Helen Bennett</td>
-                                        <td>UK</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Laughing Bacchus Winecellars</td>
-                                        <td>Yoshi Tannamuri</td>
-                                        <td>Canada</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Magazzini Alimentari Riuniti</td>
-                                        <td>Giovanni Rovelli</td>
-                                        <td>Italy</td>
-                                    </tr>
-                                </table>
+                                <span id="table-holder-1"></span>
                             </article>
                         </div>
                     </section>
@@ -111,43 +63,7 @@
                         </header>
                         <div class="features">
                             <article>
-                                <table>
-                                    <tr>
-                                        <th>Company</th>
-                                        <th>Contact</th>
-                                        <th>Country</th>
-                                    </tr>
-                                    <tr>
-                                        <td>Alfreds Futterkiste</td>
-                                        <td>Maria Anders</td>
-                                        <td>Germany</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Centro comercial Moctezuma</td>
-                                        <td>Francisco Chang</td>
-                                        <td>Mexico</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Ernst Handel</td>
-                                        <td>Roland Mendel</td>
-                                        <td>Austria</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Island Trading</td>
-                                        <td>Helen Bennett</td>
-                                        <td>UK</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Laughing Bacchus Winecellars</td>
-                                        <td>Yoshi Tannamuri</td>
-                                        <td>Canada</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Magazzini Alimentari Riuniti</td>
-                                        <td>Giovanni Rovelli</td>
-                                        <td>Italy</td>
-                                    </tr>
-                                </table>
+                                <span id="table-holder-2"></span>
                             </article>
                         </div>
                     </section>
@@ -163,7 +79,7 @@
                         </header>
                         <ul>
                             <li><a href="index.php">Homepage</a></li>
-                            <li><a href="info.php">Information</a></li>
+                            <li><a href="users.php">Users</a></li>
                         </ul>
                     </nav>
                     <!-- Section -->
@@ -188,7 +104,7 @@
                     </section>
                     <!-- Footer -->
                     <footer id="footer">
-                        <p class="copyright">&copy; NetMonitor. All rights reserved.</p>
+                        <p class="copyright">&copy; Pi-In-The-Skynet. All rights reserved.</p>
                     </footer>
                 </div>
             </div>
@@ -199,5 +115,42 @@
         <script src="assets/js/util.js"></script>
         <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
         <script src="assets/js/main.js"></script>
+        <script> 
+
+        $(document).ready(function() {
+          getTable();
+          getFlagTable();
+          getDstatTable();
+ 
+          setInterval(function(){
+            getTable();
+            getFlagTable();
+            getDstatTable();
+            console.log("Running AJAX...");
+          },10000);
+        });
+
+        function getTable(){
+          $.get("includes/helpers.php", function(data){
+            $('#table-holder').empty();
+            $('#table-holder').append(data);
+          });
+        }
+
+       function getFlagTable(){
+          $.get("includes/flag-helpers.php", function(data){
+            $('#table-holder-1').empty();
+            $('#table-holder-1').append(data);
+          });
+        }
+
+       function getDstatTable(){
+          $.get("includes/dstat-helpers.php", function(data){
+            $('#table-holder-2').empty();
+            $('#table-holder-2').append(data);
+          });
+        }
+
+        </script>
     </body>
 </html>

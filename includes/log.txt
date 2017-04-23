@@ -1,29 +1,37 @@
 EC:C8:82:FB:7F:80
 EC:C8:82:FB:7F:84
-F0:25:72:3C:03:E4
 EC:C8:82:FB:7F:89
-EC:C8:82:FB:7F:8C
-EC:C8:82:FB:7F:87
+F0:25:72:3C:03:E4
 F0:25:72:3C:03:E9
+EC:C8:82:FB:7F:8C
 F0:25:72:3C:03:EC
 F0:25:72:3C:03:E7
-EC:C8:82:FB:7F:8E
-F0:25:72:3C:01:C0
-F0:25:72:3C:03:E1
+EC:C8:82:FB:7F:87
+EC:C8:82:FB:7F:81
+F0:25:72:3C:03:E0
 F0:25:72:3C:0A:84
+F0:25:72:3C:11:F4
 F0:25:72:3C:0A:89
+F0:25:72:3C:11:F9
 F0:25:72:3C:0A:8C
 F0:25:72:3C:0A:87
-F0:25:72:3C:0A:80
-F0:25:72:3C:11:F9
 F0:25:72:3C:11:FC
 F0:25:72:3C:11:F7
+F0:25:72:3C:0A:8E
 F0:25:72:3C:11:F0
+F0:25:72:3C:0A:80
 F0:25:72:3C:0D:F0
 F0:25:72:3C:0D:F4
 F0:25:72:3C:0D:F9
 F0:25:72:3C:0D:FC
 F0:25:72:3C:0D:F7
+F0:25:72:3C:0D:FE
+F0:25:72:3C:01:C7
+F0:25:72:3C:03:E1
+F0:25:72:3C:03:EE
+F0:25:72:3C:0A:81
+F0:25:72:3C:11:FE
+F0:25:72:3C:0D:F1
 2.412 GHz (Channel 1)
 2.412 GHz (Channel 1)
 2.412 GHz (Channel 1)
@@ -35,7 +43,8 @@ F0:25:72:3C:0D:F7
 2.412 GHz (Channel 1)
 2.412 GHz (Channel 1)
 2.412 GHz (Channel 1)
-2.412 GHz (Channel 1)
+2.437 GHz (Channel 6)
+2.437 GHz (Channel 6)
 2.437 GHz (Channel 6)
 2.437 GHz (Channel 6)
 2.437 GHz (Channel 6)
@@ -50,81 +59,112 @@ F0:25:72:3C:0D:F7
 2.462 GHz (Channel 11)
 2.462 GHz (Channel 11)
 2.462 GHz (Channel 11)
-67/70
-65/70
-39/70
-66/70
-67/70
-65/70
+2.462 GHz (Channel 11)
+2.412 GHz (Channel 1)
+2.412 GHz (Channel 1)
+2.412 GHz (Channel 1)
+2.437 GHz (Channel 6)
+2.437 GHz (Channel 6)
+2.462 GHz (Channel 11)
+61/70
+62/70
+62/70
 41/70
-39/70
 41/70
-64/70
-26/70
-40/70
-48/70
+62/70
+41/70
+41/70
+59/70
+60/70
+42/70
+51/70
+33/70
 49/70
-47/70
-48/70
-46/70
-32/70
 36/70
-29/70
+49/70
+49/70
+34/70
 32/70
-49/70
-49/70
+44/70
+31/70
+47/70
+51/70
 50/70
+50/70
+51/70
+51/70
+51/70
+25/70
+40/70
+39/70
 48/70
-49/70
--43 dBm  
--45 dBm  
--71 dBm  
--44 dBm  
--43 dBm  
--45 dBm  
+36/70
+52/70
+-49 dBm  
+-48 dBm  
+-48 dBm  
 -69 dBm  
--71 dBm  
 -69 dBm  
--46 dBm  
--84 dBm  
--70 dBm  
--62 dBm  
+-48 dBm  
+-69 dBm  
+-69 dBm  
+-51 dBm  
+-50 dBm  
+-68 dBm  
+-59 dBm  
+-77 dBm  
 -61 dBm  
--63 dBm  
--62 dBm  
--64 dBm  
--78 dBm  
 -74 dBm  
--81 dBm  
+-61 dBm  
+-61 dBm  
+-76 dBm  
 -78 dBm  
--61 dBm  
--61 dBm  
+-66 dBm  
+-79 dBm  
+-63 dBm  
+-59 dBm  
 -60 dBm  
+-60 dBm  
+-59 dBm  
+-59 dBm  
+-59 dBm  
+-85 dBm  
+-70 dBm  
+-71 dBm  
 -62 dBm  
--61 dBm  
+-74 dBm  
+-58 dBm  
+FoxNet
+eduroam
+airfox-event
+eduroam
+airfox-event
+Marist Guest WiFi
+Marist Guest WiFi
+Marist Windows WiFi Setup
+Marist Windows WiFi Setup
+\x00
 FoxNet
 eduroam
 eduroam
 airfox-event
+airfox-event
 Marist Guest WiFi
 Marist Windows WiFi Setup
-airfox-event
 Marist Guest WiFi
 Marist Windows WiFi Setup
 \x00
 FoxNet
+FoxNet
+FoxNet
+eduroam
+airfox-event
+Marist Guest WiFi
+Marist Windows WiFi Setup
 \x00
-eduroam
-airfox-event
-Marist Guest WiFi
 Marist Windows WiFi Setup
-FoxNet
-airfox-event
-Marist Guest WiFi
-Marist Windows WiFi Setup
-FoxNet
-FoxNet
-eduroam
-airfox-event
-Marist Guest WiFi
-Marist Windows WiFi Setup
+\x00
+\x00
+\x00
+\x00
+\x00

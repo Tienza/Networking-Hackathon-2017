@@ -47,7 +47,7 @@
                         </header>
                         <ul>
                             <li><a href="index.php">Homepage</a></li>
-                            <li><a href="info.php">Information</a></li>
+                            <li><a href="info.php">Users</a></li>
                         </ul>
                     </nav>
                     <!-- Section -->
